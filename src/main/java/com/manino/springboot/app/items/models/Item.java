@@ -3,11 +3,9 @@ package com.manino.springboot.app.items.models;
 public class Item {
 
     Producto producto;
-    Double cantidad;
+    Integer cantidad;
 
-
-
-    public Item(Producto producto, Double cantidad){
+    public Item(Producto producto, Integer cantidad){
         this.producto = producto;
         this.cantidad = cantidad;
     }
@@ -20,15 +18,15 @@ public class Item {
         this.producto = producto;
     }
 
-    public Double getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Double cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
     public Double getTotal(){
-        return producto.getPrecio() * cantidad;
+        return producto.getPrecio() * cantidad.doubleValue();
     }
 }
